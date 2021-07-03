@@ -1,0 +1,6 @@
+https://scratch.mit.edu/scratch_1.4/#installation
+
+Adicionar um Evento/Controle "auanto clicar na bandeirinha verde"
+Depois adicionar outros comandos, para que ao clicar na bandeira ele execute os comandos.
+
+

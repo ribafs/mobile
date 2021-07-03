@@ -1,0 +1,33 @@
+Monaca Cloud IDE
+
+https://docs.monaca.io/en/products_guide/monaca_ide/
+
+Conta com:
+
+- IDE para código
+- Pré visualização
+- Degug
+- Build
+
+Vários plugins Cordova disponíveis
+
+- Selecione o projeto
+- Clique em Build
+- App Configuration. Clique em Cordova
+Podemos habilitar e escolher. Citando apenas alguns:
+- Camera
+- Battery
+- Capture
+- File
+
+Monaca Localkit
+
+Linux, Mac e Windows
+
+https://monaca.io/localkit.html
+Monaca Localkit is a local environment development support tool offered through our app development platform Monaca. You can achieve better security and peace-of-mind from your own app development environment by combining existing tools like the editor and version management system, with the versatile development support capabilities of Monaca.
+Monaca Localkit enables developers to create apps locally using their favorite development environment including Visual Studio, Eclipse, Dreamweaver, and Sublime Text. You can also use it with version control tools like Git and Subversion. Choose the best environment based on your target user and purpose.
+
+Monaca Localkit offers “Monaca Debugger”, the live debugging tool specifically designed for HTML5 hybrid apps. You can immediately run the app on an actual device by simply saving your source code in progress. You can also use a USB connection between a device and your PC to perform more serious debugging like JavaScript breakpoints and stepping using tools such as Chrome Dev Tools.
+
+

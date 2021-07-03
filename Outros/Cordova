@@ -1,0 +1,83 @@
+Instalar
+
+Requisitos para rodar o android
+
+- jdk8, da oracle ou openjdk
+- Gradle com o Android Studio (requer java 8)
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Add Homebrew to your PATH in /home/ribafs/.profile:
+    echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/ribafs/.profile
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+- Run `brew help` to get started
+
+brew install gradle
+
+Instalar SDKMANI
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+
+sdk install gradle 6.5
+
+sudo npm install -g cordova
+
+Criar projeto
+
+cordova create <path>
+cordova create your-app-name com.example.myapp MyAppName
+cordova help create
+
+Adicionar plataforma
+
+cd dir
+cordova platform add browser
+
+cordova platform add [platform] 
+
+
+    ios
+    android
+    windows
+    wp8
+    blackberry10
+    firefoxos
+    amazon-fireos
+
+Checar plataformas
+
+cordova platform ls
+ou
+cordova platform
+
+Executar
+
+cordova run <platform name>
+
+cordova run browser 
+
+Resumo
+
+cordova create app
+Aqui efetuar as alterações para uma app web
+cd app
+cordova platform add browser (ou android)
+cordova run browser (android) No caso de android, antes deste comando abrir um emulador no android-studio/advmanager
+
+Abrirá no navegador
+
+Converter
+
+If you need to convert your website to a cordova app: 1. Follow these simple steps as shown here to create new project. 2. Put the content of your index file into the cordova project's index file, make sure your js files are at the bottom of the index file. 3. Put the other files and website content on the webroot/public folder or accessible to the index file 4. Build the project. That should get you started.
+
+
+cordova clean
+
+ionic cordova build android
+
+Licença
+
+yes | ./Android/Sdk/tools/bin/sdkmanager --licenses
+
+

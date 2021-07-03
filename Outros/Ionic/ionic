@@ -1,0 +1,274 @@
+Ionic Framework
+
+https://ionicframework.com/
+https://ionicframework.com/start#basics - criar aplicativo em conjunto com o desktop
+https://ionicframework.com/community
+https://ionicframework.com/docs/components
+https://dashboard.ionicframework.com/personal/hub
+https://ionicframework.com/docs/v3/intro/tutorial/
+https://ionicframework.com/docs
+https://creator.ionic.io/app/
+
+Requisitos
+
+- nodejs (10 ou up)
+- npm
+- Ionic CLI (6.12.4 hoje (29/01/2021))
+
+Para criar os builds precisamos de:
+
+- Android - Android Studio
+- iOS - Xcode
+
+Instalação
+
+sudo npm install -g @ionic/cli
+ionic info
+
+Criar aplicativo
+
+ionic start
+
+ou
+ionic start --type Angular/React/Vue
+
+Tipos de aplicativos que podem ser criados/tempaltes: 
+
+tabs, sidemanu, blank, list, my-first-app, conference
+
+Starter template: (Use arrow keys)
+❯ tabs         | A starting project with a simple tabbed interface 
+  sidemenu     | A starting project with a side menu with navigation in the content area 
+  blank        | A blank starter project 
+  list         | A starting project with a list 
+  my-first-app | An example application that builds a camera with gallery 
+  conference   | A kitchen-sink application that shows off all Ionic has to offer 
+
+Para rodar no navegador
+
+cd nome
+
+ionic serve
+
+Aguarde ... que quando estiver pronto abrirá o anvegador automaticametne
+
+Usa por padrão localhost:8100
+
+Criar aplicativo na pasta myApp usando o template sidemenu e com angular
+
+cdc ..
+ionic start myApp sidemenu --type angular
+
+Será redirecionado para o site do ionic, após responder se deseja criar uma conta free no ionic
+
+https://dashboard.ionicframework.com/personal/hub
+
+Ao selecionar um aplicativo no site acima, na seção Overview aparece:
+
+sudo npm install -g @ionic/cli cordova-res
+git clone https://github.com/ribafs/teste.git breakout-br
+cd breakout-br && npm install && ionic serve
+
+A primeira linha só funcionou assim:
+sudo npm install -g @ionic/cli cordova-res --unsafe-perm
+
+Criar usando o capacitor
+
+ionic start AppName sidemenu --capacitor
+
+Habilitar o capacitor em aplicativo existente
+
+ionic integrations enable capacitor
+
+Iniciar capacitor
+
+npx cap init
+
+Build para uma das plataformas
+
+ionic build - Build web assets and prepare your app for any platform targets
+
+npm run build
+
+capacitor.config.json
+
+{
+  "appId": "io.ionic.starter",
+  "appName": "android",
+  "bundledWebRuntime": false,
+  "linuxAndroidStudioPath": "/home/ribafs/android-studio/bin/studio.sh",
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+}
+
+npx cap add android
+
+npx cap copy
+
+npx cap copy android
+npx cap open android
+
+ionic build
+ionic build --prod
+ionic build --watch
+
+ionic build --platform=<platform> (android/ios)
+
+ionic build --platform=android
+
+To build the app in iOS, you will have to create platform first, and them cd into the platform folder and run following command to install all dependencies
+
+$ pod install
+
+Adicionar nova página/service/module/component
+
+ionic generate
+
+Usando o comando para fazer isso
+
+ionic g page "My new page"
+
+
+
+Ionic provides @ionic/angular-toolkit, which builds and integrates with the official Angular CLI and provides features that are specific to @ionic/angular
+
+Instalar plugin
+
+ionic cordova plugin add <plugin-name>
+
+Plataforma
+
+ionic cordova platform add <platform-name>
+
+android/iOS
+
+Estrutura de pastas
+
+e2e
+src
+node_modules
+resources (alguns apps)
+
+Ionic is both 100 percent free and open source. This project, licensed under MIT, enables you to build fully cross-platform, progressive web and native mobile apps for every major app store… all from a single codebase. You can develop Ionic apps on any platform you like. Of course, our platform of choice is Linux. Fortunately, Ionic offers a simple command-line interface (CLI) that can be used to create, build, test, and deploy your apps to any platform. Ionic also features:
+
+    Ionic Native, which allows you to unlock native APIs (and other features), by wrapping Cordova plugins in TypeScript.
+
+    Live Reload, which allows you to compile and re-deploy an app at every development step.
+
+    Ionicons, which is an icon pack that includes hundreds of the most common app icons (all MIT licensed and ready to use).
+
+    Deeplinking, which allow you to start your app from a web link (and can even load a specific view out of the box).
+
+    AoT Compiling, which helps your apps to load faster.
+
+Create a free Ionic account here and then install Ionic on your distribution. For example, if you’re using Ubuntu as your development platform, to install Ionic you must first install Node.js and npm like so:
+
+    Open a terminal window.
+
+    Issue the command sudo apt install curl
+
+    Add the necessary repository with the command curl -sL https://deb.nodesource.com/setup_10.x | sudo bash –
+
+    Install node.js and npm with the command sudo apt install nodejs
+
+Install Ionic with the command:
+
+sudo npm install -g ionic
+
+
+
+npm install -g @ionic/cli
+
+ionic start myApp tabs
+
+cd myApp
+ionic serve
+
+https://ionicframework.com/docs/developing/android
+
+ionic capacitor add android
+
+ionic cordova prepare android
+
+ionic capacitor copy android
+
+ionic capacitor run android -l --host=YOUR_IP_ADDRESS
+
+ionic cordova run android -l
+
+You can now begin creating and working with your project. To create a new project, issue the command:
+
+ionic start PROJECT_NAME blank --type ionic1
+
+where PROJECT_NAME is the name of your project. You should see a newly created folder (with the same name as your project), that includes a number of new files and folders (Figure 1).
+
+Canais
+
+Curso de Ionic 5 - https://www.youtube.com/watch?v=yE43tWklI0A&list=PLxNM4ef1BpxgaqfUTvdsnkVTrbi6bNWl- 10 aulas
+Curso Ionic 3 - https://www.youtube.com/watch?v=US07NxG4BYQ&list=PLMg7nm9OcrdmXg_7p1FBi_8s3rxsk05jR - 36 aulas
+Ionic 5 - https://www.youtube.com/watch?v=uL_lT9ZXrW8&list=PLMg7nm9Ocrdkno52PlJNyaxW2WD9zuPfm - 5 aulas
+Ionic 3 - https://www.youtube.com/watch?v=dewZD47BpTY&list=PLryJIoSncQyNmj_qq5Q26ZkYc1gvDwFgN - 19 aulas
+Ionic 6 - https://www.youtube.com/watch?v=mMQbYiHy59Q&list=PLxNM4ef1BpxgBAqQsMHhwBH6EmwQOD7Rq - 10 aulas
+Ionic 3 - https://www.youtube.com/watch?v=kx7f_5IJXY8&list=PLswa9HeoJUq_Dphg3w1TwqBMgruzRCwIO - 35 aulas
+Como armazenar dados offline com Ionic Storage - https://www.youtube.com/watch?v=dewZD47BpTY
+Gerar aplicativos Android com IONIC Creator desenvolvendo Lojinha Virtual - https://www.youtube.com/watch?v=qFtaXh3ic1Q
+Ionic creator - https://www.youtube.com/watch?v=9iwwbagDjMQ
+Ionic Creator - Crie aplicativos através de interface - https://www.youtube.com/watch?v=zLIW4qqxI_0
+Criando apps com Ionic Framework - Guia completo 2020/2021 - https://www.youtube.com/watch?v=guM__mfT9og
+
+
+Tools
+https://developer.android.com/studio
+nodejs
+VSCode
+Git
+GitHub
+https://pingendo.com/download.html
+pencil2d
+https://mediamodifier.com/design - mockup
+
+
+sudo npm install -g @ionic/cli native-run cordova-res
+
+ionic start photo-gallery tabs --type=angular --capacitor
+
+cd photo-gallery
+
+npm install @ionic/pwa-elements
+
+ionic serve
+
+
+ionic cordova build --release android
+
+keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+
+
+Instalar plugin do ionic
+
+npm install -g cordova ionic
+
+
+ionic platform add android
+
+ionic build --release android
+
+Gerar certificado
+
+    keytool -genkey -v -keystore SEU-APP.keystore -alias SEU-APP -keyalg RSA -keysize 2048 -validity 10000
+
+Assinar a apk
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore SEU-APP.keystore android-release-unsigned.apk SEU-APP
+
+Alinhar apk
+
+ zipalign -v 4 android-release-NOMEDASUAAPP.apk NOMEDASUAAPP.apk
+
+

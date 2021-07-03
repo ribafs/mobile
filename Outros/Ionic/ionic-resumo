@@ -1,0 +1,70 @@
+Ionic resumo
+
+Requisitos
+
+- nodejs (10 ou up)
+- npm
+- Ionic CLI (6.12.4 hoje (29/01/2021))
+- android-studio
+- glader
+
+Instalar
+
+sudo npm install -g @ionic/cli cordova-res --unsafe-perm
+
+Criar aplicativo com template sidemenu usando capacitor na pasta android
+
+ionic start android sidemenu --capacitor
+
+Angular
+
+cd android
+
+Gerar os assets
+
+ionic build (ou npm run build)
+
+Ao final ele me diz:
+WARNING in /home/ribafs/ionic/and/src/test.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in /home/ribafs/ionic/and/src/environments/environment.prod.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+Instalar as dependẽncias do android
+
+npx cap add android
+
+Ao final
+
+✔ Installing android dependencies in 49.15s
+✔ Adding native android project in: /home/ribafs/ionic/and/android in 422.63ms
+✔ Syncing Gradle in 19.21ms
+✔ add in 49.60s
+✔ Copying web assets from www to android/app/src/main/assets/public in 4.68s
+✔ Copying native bridge in 12.16ms
+✔ Copying capacitor.config.json in 3.32ms
+✔ copy in 4.82s
+✔ Updating Android plugins in 32.71ms
+  Found 0 Capacitor plugins for android:
+✔ update android in 73.20ms
+
+Now you can run npx cap open android to launch Android Studio
+
+npx cap open android
+
+Pede que adicione ao capacitor.config.json: "linuxAndroidStudioPath": "/home/ribafs/android-studio/bin/studio.sh",
+
+npx cap open android
+
+Então ele abre o android-studio. Observando a barra de status o vejo baixando o gradle 5.6.4
+
+Mostra: Opening Android project at /home/ribafs/ionic/and/android
+
+Gerar ícones e splach screen 
+
+cordova-res --skip-config --copy
+
+ionic capacitor add android
+
+
