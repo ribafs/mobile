@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>websql</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="tools"></div>
+    <div class="demo"></div>
+    <script src="websql.js"></script>
+    <script>
+        //表结构描述简单格式
+        var tbls = {
+            "SSF_GOODS": ["GOODSID", "GOODSNAME", "PPRICE", "STATUS"],
+            "SSF_ORDER": ["ORDERID", "AMOUNT", "PAYDATE"],
+            "SSF_ORDER_DETAILS": ["DETAILSID", "ORDERID", "GOODSID", "QUANTITY", "PRICE", "AMOUNT"]
+        }
+        //表结构描述复杂格式
+        var SSF_GOODS = [{
+                prop: "GOODSID",
+                label: "商品编号",
+                type: "string"
+            },
+            {
+                prop: "GOODSNAME",
+                label: "商品名",
+                type: "string"
+            },
+            {
+                prop: "PPRICE",
+                label: "单价",
+                type: "number"
+            },
+            {
+                prop: "STATUS",
+                label: "状态",
+                type: "string"
+            },
+        ];
+        var SSF_ORDER = [{
+                prop: "ORDERID",
+                label: "订单编号",
+                type: "string"
+            },
+            {
+                prop: "AMOUNT",
+                label: "订单金额",
+                type: "number"
+            },
+            {
+                prop: "PAYDATE",
+                label: "支付日期",
+                type: "date"
+            }
+        ]
+        var SSF_ORDER_DETAILS = [{
+                prop: "DETAILSID",
+                label: "编号",
+                type: "string"
+            },
+            {
+                prop: "ORDERID",
+                label: "订单编号",
+                type: "string"
+            },
+            {
+                prop: "GOODSID",
+                label: "商品编号",
+                type: "string"
+            },
+            {
+                prop: "QUANTITY",
+                label: "数量",
+                type: "number"
+            },
+            {
+                prop: "PRICE",
+                label: "单价",
+                type: "number"
+            },
+            {
+                prop: "AMOUNT",
+                label: "金额",
+                type: "number"
+            },
+
+        ];
+
+        var tbls = {
+            "SSF_GOODS": SSF_GOODS,
+            "SSF_ORDER": SSF_ORDER,
+            "SSF_ORDER_DETAILS": SSF_ORDER_DETAILS,
+        }
+        var goodsList = [{
+                GOODSID: 32011,
+                GOODSNAME: "A",
+                PPRICE: 5.5,
+                STATUS: 1
+            },
+            {
+                GOODSID: 32012,
+                GOODSNAME: "B",
+                PPRICE: 8,
+                STATUS: 1
+            },
+            {
+                GOODSID: 32019,
+                GOODSNAME: "C",
+                PPRICE: 12.3,
+                STATUS: 1
+            },
+            {
+                GOODSID: 32017,
+                GOODSNAME: "D",
+                PPRICE: 6.6,
+                STATUS: 1
+            },
+            {
+                GOODSID: 32015,
+                GOODSNAME: "E",
+                PPRICE: 14.9,
+                STATUS: 1
+            },
+            {
+                GOODSID: 32038,
+                GOODSNAME: "F",
+                PPRICE: 8.9,
+                STATUS: 1
+            }
+        ];
+        var orderList = [{
+                ORDERID: 51104,
+                AMOUNT: 72.5,
+                PAYDATE: "2019/1/2"
+            },
+            {
+                ORDERID: 51105,
+                AMOUNT: 56,
+                PAYDATE: "2019/1/2"
+            },
+            {
+                ORDERID: 51106,
+                AMOUNT: 53.8,
+                PAYDATE: "2019/1/4"
+            },
+            {
+                ORDERID: 51107,
+                AMOUNT: 33.7,
+                PAYDATE: "2019/1/15"
+            },
+            {
+                ORDERID: 51108,
+                AMOUNT: 120.6,
+                PAYDATE: "2019/1/12"
+            }
+        ];
+        var orderDetailsList = [{
+                DETAILSID: 62134,
+                ORDERID: 51104,
+                GOODSID: 32011,
+                QUANTITY: 1,
+                PRICE: 8.9,
+                AMOUNT: 8.9
+            },
+            {
+                DETAILSID: 62135,
+                ORDERID: 51104,
+                GOODSID: 32015,
+                QUANTITY: 4,
+                PRICE: 15.9,
+                AMOUNT: 63.6
+            },
+            {
+                DETAILSID: 62136,
+                ORDERID: 51105,
+                GOODSID: 32012,
+                QUANTITY: 7,
+                PRICE: 8,
+                AMOUNT: 56
+            },
+            {
+                DETAILSID: 62137,
+                ORDERID: 51107,
+                GOODSID: 32012,
+                QUANTITY: 3,
+                PRICE: 8,
+                AMOUNT: 24
+            },
+            {
+                DETAILSID: 62138,
+                ORDERID: 51107,
+                GOODSID: 32019,
+                QUANTITY: 8,
+                PRICE: 9.6,
+                AMOUNT: 76.8
+            },
+            {
+                DETAILSID: 62139,
+                ORDERID: 51107,
+                GOODSID: 32015,
+                QUANTITY: 15,
+                PRICE: 16.1,
+                AMOUNT: 241.5
+            },
+            {
+                DETAILSID: 62141,
+                ORDERID: 51108,
+                GOODSID: 32019,
+                QUANTITY: 9,
+                PRICE: 10.6,
+                AMOUNT: 95.4
+            },
+            {
+                DETAILSID: 62142,
+                ORDERID: 51108,
+                GOODSID: 32011,
+                QUANTITY: 7,
+                PRICE: 3.6,
+                AMOUNT: 25.2
+            }
+        ];
+
+        var data = {
+            "SSF_GOODS": goodsList,
+            "SSF_ORDER": orderList,
+            "SSF_ORDER_DETAILS": orderDetailsList
+        }
+
+
+        var ws = websql({
+            tbls: tbls,
+            data: data,
+        })
+        // console.log(ws)
+        var tools=document.querySelector(".tools")
+        tools.appendChild(ws.createBtns());
+        tools.appendChild(ws.createSqlcmd())
+        // tools.appendChild(ws.createExeSqlHistory())
+        var demo=document.querySelector(".demo")
+        demo.appendChild(ws.createSlide())
+    </script>
+</body>
+
+</html>
