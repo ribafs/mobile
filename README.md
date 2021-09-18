@@ -10,4 +10,3 @@ Se você conhece uma ferramenta mais prática que o Monaca, por favor deixa aqui
 
 https://github.com/ribafs/mobile/issues
 
-
